@@ -179,6 +179,7 @@
     git
     htop
     vscode
+    zed-editor
     
     stremio
     signal-desktop
@@ -191,6 +192,7 @@
     python314Full
     uv
     docker
+    deno
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
