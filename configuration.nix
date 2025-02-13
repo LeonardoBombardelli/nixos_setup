@@ -126,6 +126,14 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
+    services.ollama = {
+    enable = true;
+    # Optional: load models on startup
+    # loadModels = [ ... ];
+  
+    acceleration = "cuda";
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lbbombardelli = {
     isNormalUser = true;
@@ -179,6 +187,9 @@
     git
     htop
     vscode
+    radicle-node
+    radicle-explorer
+    gnome.gnome-tweaks
     
     stremio
     signal-desktop
@@ -191,6 +202,7 @@
     python314Full
     uv
     docker
+    bruno
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
