@@ -130,7 +130,7 @@
     enable = true;
     # Optional: load models on startup
     # loadModels = [ ... ];
-  
+
     acceleration = "cuda";
   };
 
@@ -159,7 +159,14 @@
   systemd.services."autovt@tty1".enable = false;
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      packageOverrides = pkgs: {
+        unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {};
+      };
+    };
+  };
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -185,12 +192,13 @@
   #  wget
     wget
     git
+    lazygit
     htop
     vscode
     radicle-node
     radicle-explorer
-    gnome.gnome-tweaks
-    zed-editor
+    gnome-tweaks
+    unstable.zed-editor
 
     stremio
     signal-desktop
@@ -203,7 +211,13 @@
     gcc
     rustup
     python314Full
+    python313Full
+    unstable.python313Packages.black
+    unstable.python313Packages.ruff
+    unstable.python313Packages.pylint
+    unstable.python313Packages.pip
     uv
+    nil
     docker
     bruno
     nixd
