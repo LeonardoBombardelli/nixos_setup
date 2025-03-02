@@ -96,6 +96,30 @@
     enable = true;
     userName  = "Leonardo Bombardelli";
     userEmail = "leonardo.b.bombardelli@gmail.com";
+
+    # Following https://blog.gitbutler.com/how-git-core-devs-configure-git/
+    extraConfig = {
+      column.ui = "auto";
+      branch.sort = "-committerdate";
+      tag.sort = "version:refname";
+      init.defaultBranch = "main";
+      diff = {
+        algorithm = "histogram";
+        colorMoved = "plain";
+        mnemonicPrefix = true;
+        renames = "true";
+      };
+      push = {
+        default = "simple";
+        autoSetupRemote = "true";
+        followTags = "true";
+      };
+      fetch = {
+        prune = "true";
+        pruneTags = "true";
+        all = "true";
+      };
+    };
   };
 
   # Setting up zshell
