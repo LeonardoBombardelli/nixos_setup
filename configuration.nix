@@ -195,14 +195,30 @@
     # Install firefox.
     firefox.enable = true;
 
-    # Enables Zshell
-    zsh.enable = true;
-    zsh.ohMyZsh = {
+    zsh = {
+      # Enables Zshell
       enable = true;
-      plugins = [ "git" "sudo" "docker" "kubectl" ];
+      ohMyZsh = {
+        enable = true;
+        plugins = [ "git" "sudo" "docker" "kubectl" ];
+      };
+      shellAliases = {
+        ls = "eza";
+        ll = "eza -l";
+        la = "eza -la";
+
+        lg = "lazygit";
+        ld = "sudo lazydocker";
+      };
     };
   };
 
+  virtualisation = {
+    docker = {
+      enable = true;
+      enableOnBoot = true;
+    };
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -212,6 +228,8 @@
     wget
     git
     lazygit
+    jujutsu
+    unstable.lazyjj
     htop
     vscode
     radicle-node
@@ -238,6 +256,7 @@
     uv
     nil
     docker
+    lazydocker
     bruno
     nixd
   ];
