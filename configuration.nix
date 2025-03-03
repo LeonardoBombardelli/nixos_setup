@@ -136,6 +136,8 @@
     acceleration = "cuda";
   };
 
+  radicle.enable = true;
+
   # Enable automatic login for the user.
   displayManager.autoLogin.enable = true;
   displayManager.autoLogin.user = "lbbombardelli";
