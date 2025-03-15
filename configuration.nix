@@ -95,14 +95,20 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
+  # https://nixos.wiki/wiki/Wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   services = {
 
     # Enable the X11 windowing system.
     xserver.enable = true;
 
-    # Enable the GNOME Desktop Environment.
-    xserver.displayManager.gdm.enable = true;
-    xserver.desktopManager.gnome.enable = true;
+    # Enable the KDE/Wayland Desktop Environment. https://discourse.nixos.org/t/replacing-x11-with-wayland-on-kde-plasma-6/58650
+    # displayManager.sddm.enable = true;
+    # displayManager.sddm.wayland.enable = true;
+    # displayManager.sddm.settings.General.DisplayServer = "wayland";
+    # desktopManager.plasma6.enable = true;
+
 
 
     # Configure keymap in X11
@@ -136,7 +142,7 @@
     acceleration = "cuda";
   };
 
-  radicle.enable = true;
+  # radicle.enable = true;
 
   # Enable automatic login for the user.
   displayManager.autoLogin.enable = true;
@@ -197,6 +203,14 @@
     # Install firefox.
     firefox.enable = true;
 
+    # Activates niri
+    niri = {
+      enable = true;
+      };
+
+    # https://discourse.nixos.org/t/how-to-do-xwayland-on-nixos/57825
+    xwayland.enable = true;
+
     zsh = {
       # Enables Zshell
       enable = true;
@@ -227,6 +241,14 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+
+    niri
+    waybar
+    mako
+    fuzzel
+    alacritty
+    xwayland-satellite
+
     wget
     git
     lazygit
@@ -238,6 +260,7 @@
     radicle-explorer
     gnome-tweaks
     unstable.zed-editor
+    unstable.firefox
 
     stremio
     signal-desktop

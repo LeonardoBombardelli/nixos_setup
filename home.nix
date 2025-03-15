@@ -19,6 +19,22 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs = {
+    waybar = {
+      enable = true;
+      settings = {
+        mainBar = {
+          layer = "top";
+          position = "top";
+          height = 30;
+          modules-left = ["disk" "memory" "cpu" "network"];
+          modules-center = ["clock"];
+          modules-right = ["pulseaudio" "tray"];
+          # Add more module configurations as needed
+        };
+      };
+    };
+  };
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
