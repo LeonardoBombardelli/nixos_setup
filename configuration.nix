@@ -247,6 +247,8 @@
     mako
     fuzzel
     alacritty
+    yazi
+    zoxide
     xwayland-satellite
 
     wget
@@ -264,7 +266,7 @@
 
     stremio
     signal-desktop
-    discord-ptb
+    discord
     ledger
     obsidian
     zotero
