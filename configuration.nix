@@ -249,6 +249,7 @@
     alacritty
     yazi
     zoxide
+    pavucontrol
     xwayland-satellite
 
     wget
