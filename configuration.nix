@@ -250,6 +250,7 @@
     yazi
     zoxide
     pavucontrol
+    unstable.clock-rs
     xwayland-satellite
 
     wget
@@ -271,6 +272,7 @@
     ledger
     obsidian
     zotero
+    youtube-music
 
     go
     gcc
@@ -285,6 +287,7 @@
     nil
     docker
     lazydocker
+    devbox
     bruno
     nixd
   ];
