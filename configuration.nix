@@ -272,6 +272,7 @@
     ledger
     obsidian
     zotero
+    calibre
     youtube-music
 
     go
