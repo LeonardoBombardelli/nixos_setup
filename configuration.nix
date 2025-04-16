@@ -109,7 +109,11 @@
     # displayManager.sddm.settings.General.DisplayServer = "wayland";
     # desktopManager.plasma6.enable = true;
 
+    gvfs.enable = true;
+    nfs.server.enable = true;
 
+    # https://nixos.wiki/wiki/Calibre
+    udisks2.enable = true;
 
     # Configure keymap in X11
     xserver.xkb = {
@@ -248,8 +252,10 @@
     fuzzel
     alacritty
     yazi
+    nautilus
     zoxide
     pavucontrol
+    brightnessctl
     unstable.clock-rs
     xwayland-satellite
 
@@ -265,6 +271,7 @@
     gnome-tweaks
     unstable.zed-editor
     unstable.firefox
+    thunderbird
 
     stremio
     signal-desktop
@@ -272,10 +279,9 @@
     ledger
     obsidian
     zotero
-    calibre
     youtube-music
+    calibre
 
-    go
     gcc
     rustup
     python314Full
