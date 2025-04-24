@@ -53,6 +53,7 @@
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
+  hardware.bluetooth.enable = true;
   security.rtkit.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -167,6 +168,9 @@
 
   # Enable the OpenSSH daemon.
   openssh.enable = true;
+
+  # https://nixos.wiki/wiki/Bluetooth
+  blueman.enable = true;
 };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
