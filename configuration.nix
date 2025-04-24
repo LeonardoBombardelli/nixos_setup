@@ -289,6 +289,7 @@
     youtube-music
     calibre
 
+    go
     gcc
     rustup
     python313Full
