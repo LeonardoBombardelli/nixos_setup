@@ -53,6 +53,7 @@
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
+  hardware.bluetooth.enable = true;
   security.rtkit.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -119,7 +120,11 @@
     # displayManager.sddm.settings.General.DisplayServer = "wayland";
     # desktopManager.plasma6.enable = true;
 
+    gvfs.enable = true;
+    nfs.server.enable = true;
 
+    # https://nixos.wiki/wiki/Calibre
+    udisks2.enable = true;
 
     # Configure keymap in X11
     xserver.xkb = {
@@ -173,6 +178,9 @@
 
   # Enable the OpenSSH daemon.
   openssh.enable = true;
+
+  # https://nixos.wiki/wiki/Bluetooth
+  blueman.enable = true;
 };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -251,6 +259,7 @@
     nautilus
     zoxide
     pavucontrol
+    brightnessctl
     unstable.clock-rs
     xwayland-satellite
 
@@ -269,6 +278,7 @@
     google-chrome
     unstable.ollama-cuda
 
+    thunderbird
 
     stremio
     signal-desktop
@@ -277,8 +287,8 @@
     obsidian
     zotero
     youtube-music
+    calibre
 
-    go
     gcc
     rustup
     python313Full

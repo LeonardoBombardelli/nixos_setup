@@ -21,19 +21,27 @@
 
   programs = {
     waybar = {
-      enable = true;
-      settings = {
+      enable = false;
+      # systemd.enable = true;
+
+        settings = {
         mainBar = {
           layer = "top";
           position = "top";
           height = 30;
           modules-left = ["disk" "memory" "cpu" "network"];
           modules-center = ["clock"];
-          modules-right = ["pulseaudio" "tray"];
+          modules-right = ["pulseaudio" "tray" "battery"];
           # Add more module configurations as needed
         };
       };
     };
+
+    zoxide.enable = true;
+  };
+
+  services = {
+    mpris-proxy.enable = true;
   };
 
   # Packages that should be installed to the user profile.
