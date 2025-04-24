@@ -269,6 +269,7 @@
     google-chrome
     unstable.ollama-cuda
 
+
     stremio
     signal-desktop
     discord
@@ -280,12 +281,13 @@
     go
     gcc
     rustup
-    python314Full
     python313Full
     unstable.python313Packages.black
     unstable.python313Packages.ruff
     unstable.python313Packages.pylint
+
     unstable.python313Packages.pip
+    unstable.python313Packages.jupyterlab
     uv
     nil
     docker
