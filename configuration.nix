@@ -98,6 +98,16 @@
   # https://nixos.wiki/wiki/Wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  # Allow unfree packages
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      packageOverrides = pkgs: {
+        unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {config.allowUnfree = true;};
+      };
+    };
+  };
+
   services = {
 
     # Enable the X11 windowing system.
@@ -134,13 +144,13 @@
 
   xserver.videoDrivers = [ "nvidia" ];
 
-  ollama = {
-    enable = true;
-    # Optional: load models on startup
-    # loadModels = [ ... ];
+  # ollama = {
+  #   enable = true;
+  #   # Optional: load models on startup
+  #   # loadModels = [ ... ];
 
-    acceleration = "cuda";
-  };
+  #   acceleration = "cuda";
+  # };
 
   # radicle.enable = true;
 
@@ -184,16 +194,6 @@
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
-
-  # Allow unfree packages
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      packageOverrides = pkgs: {
-        unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {};
-      };
-    };
-  };
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -265,6 +265,7 @@
     gnome-tweaks
     unstable.zed-editor
     unstable.firefox
+    unstable.ollama-cuda
 
     stremio
     signal-desktop
