@@ -248,6 +248,7 @@
     fuzzel
     alacritty
     yazi
+    nautilus
     zoxide
     pavucontrol
     unstable.clock-rs
@@ -265,6 +266,7 @@
     gnome-tweaks
     unstable.zed-editor
     unstable.firefox
+    google-chrome
     unstable.ollama-cuda
 
     stremio
