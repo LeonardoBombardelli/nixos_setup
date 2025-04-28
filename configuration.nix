@@ -149,13 +149,9 @@
 
   xserver.videoDrivers = [ "nvidia" ];
 
-  # ollama = {
-  #   enable = true;
-  #   # Optional: load models on startup
-  #   # loadModels = [ ... ];
-
-  #   acceleration = "cuda";
-  # };
+  ollama = {
+    enable = true;
+  };
 
   # radicle.enable = true;
 
@@ -267,14 +263,14 @@
     git
     lazygit
     jujutsu
-    unstable.lazyjj
+    lazyjj
     htop
     vscode
     radicle-node
     radicle-explorer
     gnome-tweaks
     unstable.zed-editor
-    unstable.firefox
+    firefox
     google-chrome
     unstable.ollama-cuda
 
@@ -282,7 +278,7 @@
 
     stremio
     signal-desktop
-    discord
+    webcord
     ledger
     obsidian
     zotero
