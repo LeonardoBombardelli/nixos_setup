@@ -149,7 +149,6 @@
 
   xserver.videoDrivers = [ "nvidia" ];
 
-
   # radicle.enable = true;
 
   # Enable automatic login for the user.
@@ -212,6 +211,8 @@
     # https://discourse.nixos.org/t/how-to-do-xwayland-on-nixos/57825
     xwayland.enable = true;
 
+    hyprland.enable = true;
+
     zsh = {
       # Enables Zshell
       enable = true;
@@ -267,7 +268,7 @@
     radicle-explorer
     gnome-tweaks
     unstable.zed-editor
-    firefox
+    unstable.firefox
     google-chrome
 
     thunderbird
@@ -276,9 +277,11 @@
     signal-desktop
     webcord
     ledger
+    unstable.bagels
     obsidian
     zotero
     youtube-music
+    ytermusic
     calibre
 
     go
@@ -300,6 +303,15 @@
     nixd
   ];
 
+  programs.nix-ld.enable = true;
+
+  programs.nix-ld.libraries = with pkgs; [
+
+    # Add any missing dynamic libraries for unpackaged programs
+
+    # here, NOT in environment.systemPackages
+
+  ];
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
