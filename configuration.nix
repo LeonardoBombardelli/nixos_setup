@@ -149,9 +149,6 @@
 
   xserver.videoDrivers = [ "nvidia" ];
 
-  ollama = {
-    enable = true;
-  };
 
   # radicle.enable = true;
 
@@ -272,7 +269,6 @@
     unstable.zed-editor
     firefox
     google-chrome
-    unstable.ollama-cuda
 
     thunderbird
 
